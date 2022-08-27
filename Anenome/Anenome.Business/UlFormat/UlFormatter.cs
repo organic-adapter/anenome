@@ -12,7 +12,7 @@ namespace Anenome.Business.UlFormat
 	/// Swap out if we find a good converter/mapper/serializer.
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public class UlConverter : IAnenomeConverter
+	public class UlFormatter : IAnenomeFormatter
 	{
 		#region can be configured
 
@@ -28,7 +28,7 @@ namespace Anenome.Business.UlFormat
 
 		#endregion can be configured
 
-		public UlConverter()
+		public UlFormatter()
 		{
 			sortPropsBy.Add(PropertySort.Unknown, Unhandled);
 			sortPropsBy.Add(PropertySort.Custom, Unhandled);
@@ -36,14 +36,14 @@ namespace Anenome.Business.UlFormat
 			sortPropsBy.Add(PropertySort.Alphabetical, SortPropsAlphabetically);
 			sortPropsBy.Add(PropertySort.UsingSource, MaintainPropOrder);
 		}
-		public string Convert(Block block, PropertySort sort, string appendTo, int currentDepth = 0)
+		public string Format(Block block, PropertySort sort, string appendTo, int currentDepth = 0)
 		{
 			var props = sortPropsBy[sort](block);
 			foreach (var prop in props)
 			{
 				appendTo += AddProp(currentDepth, prop.Key);
 				if (prop.Value != null)
-					appendTo = Convert(prop.Value, sort, appendTo, currentDepth + 1);
+					appendTo = Format(prop.Value, sort, appendTo, currentDepth + 1);
 			}
 			return appendTo;
 		}

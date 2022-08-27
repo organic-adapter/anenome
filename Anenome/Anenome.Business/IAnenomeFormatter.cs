@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Anenome.Business
 {
-	public interface IAnenomeConverter
+	public interface IAnenomeFormatter
 	{
-		public string Convert(Block block, PropertySort sort, string appendTo, int currentDepth = 0);
+		public string Format(Block block, PropertySort sort, string appendTo, int currentDepth = 0);
 	}
 }

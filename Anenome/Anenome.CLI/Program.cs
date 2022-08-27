@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 var service = new ServiceCollection();
 service.AddTransient<IParenthesesTokenizer, ParenthesisToBlockTokenizer>();
-service.AddTransient<IAnenomeConverter, UlConverter>();
+service.AddTransient<IAnenomeFormatter, UlFormatter>();
 service.AddTransient<IAnenomeMapper, PathOfLeastResistanceMapper>();
 
 var provider = service.BuildServiceProvider();

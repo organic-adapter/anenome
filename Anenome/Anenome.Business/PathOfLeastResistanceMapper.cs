@@ -10,19 +10,19 @@ namespace Anenome.Business
 	/// </summary>
 	public class PathOfLeastResistanceMapper : IAnenomeMapper
 	{
-		private readonly IAnenomeConverter anenomeConverter;
+		private readonly IAnenomeFormatter anenomeFormatter;
 		private readonly IParenthesesTokenizer parenthesesTokenizer;
 
-		public PathOfLeastResistanceMapper(IParenthesesTokenizer parenthesesTokenizer, IAnenomeConverter anenomeConverter)
+		public PathOfLeastResistanceMapper(IParenthesesTokenizer parenthesesTokenizer, IAnenomeFormatter anenomeConverter)
 		{
 			this.parenthesesTokenizer = parenthesesTokenizer;
-			this.anenomeConverter = anenomeConverter;
+			this.anenomeFormatter = anenomeConverter;
 		}
 
 		public string Map(string source, PropertySort sort)
 		{
 			var rootBlock = parenthesesTokenizer.Tokenize(source);
-			return anenomeConverter.Convert(rootBlock, sort, string.Empty);
+			return anenomeFormatter.Format(rootBlock, sort, string.Empty);
 		}
 	}
 }
