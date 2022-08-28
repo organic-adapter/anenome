@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anenome.Business", "Anenome
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anenome.CLI", "Anenome.CLI\Anenome.CLI.csproj", "{3A60433F-C26B-485A-B3BE-E6496E0F48DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anenome.Contracts", "Anenome.Contracts\Anenome.Contracts.csproj", "{083D61F4-F8C6-42D5-8BC6-16B0AF65AEE2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anenome.Business.Tests", "Anenome.Business.Tests\Anenome.Business.Tests.csproj", "{6B8867F6-F665-4274-9725-957C0E9E5BFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anenome.Business.Tests", "Anenome.Business.Tests\Anenome.Business.Tests.csproj", "{6B8867F6-F665-4274-9725-957C0E9E5BFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{3A60433F-C26B-485A-B3BE-E6496E0F48DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A60433F-C26B-485A-B3BE-E6496E0F48DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A60433F-C26B-485A-B3BE-E6496E0F48DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{083D61F4-F8C6-42D5-8BC6-16B0AF65AEE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{083D61F4-F8C6-42D5-8BC6-16B0AF65AEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{083D61F4-F8C6-42D5-8BC6-16B0AF65AEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{083D61F4-F8C6-42D5-8BC6-16B0AF65AEE2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B8867F6-F665-4274-9725-957C0E9E5BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6B8867F6-F665-4274-9725-957C0E9E5BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B8867F6-F665-4274-9725-957C0E9E5BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
