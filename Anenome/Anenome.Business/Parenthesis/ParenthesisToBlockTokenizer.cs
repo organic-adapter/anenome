@@ -16,15 +16,16 @@ namespace Anenome.Business.Parenthesis
 			var endOfBlock = block.Length - 1;
 
 			var propertyStart = notFound;
+			if (!block.Contains(propertyDelimiter) && !block.Contains(blockStartDelimiter))
+			{
+				blockProperties.Add(block, Block.Blank);
+				return blockProperties;
+			}
 			//OPTIMIZATIONS: Cyclomatic complexity is high in this area. Difficult to read as well.
 			for (var i = 0; i <= endOfBlock; i++)
 			{
 				var focus = block[i];
-				if(!block.Contains(propertyDelimiter) && !block.Contains(blockStartDelimiter))
-				{
-					blockProperties.Add(block, Block.Blank);
-				}
-				else if (focus.Equals(blockStartDelimiter))
+				if (focus.Equals(blockStartDelimiter))
 				{
 					var propertyName = block.Substring(propertyStart, i - propertyStart).Trim();
 					var nestedBlockStart = i;
