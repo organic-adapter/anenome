@@ -20,7 +20,11 @@ namespace Anenome.Business.Parenthesis
 			for (var i = 0; i <= endOfBlock; i++)
 			{
 				var focus = block[i];
-				if (focus.Equals(blockStartDelimiter))
+				if(!block.Contains(propertyDelimiter) && !block.Contains(blockStartDelimiter))
+				{
+					blockProperties.Add(block, Block.Blank);
+				}
+				else if (focus.Equals(blockStartDelimiter))
 				{
 					var propertyName = block.Substring(propertyStart, i - propertyStart).Trim();
 					var nestedBlockStart = i;
@@ -77,13 +81,22 @@ namespace Anenome.Business.Parenthesis
 		{
 			var blockStart = notFound;
 			var blockEnd = notFound;
+			var blockLevels = 0;
 			for (var i = startIndex; i < value.Length; i++)
 			{
 				var focus = value[i];
-				if (blockStart == notFound && focus.Equals(blockStartDelimiter))
-					blockStart = i;
-				if (focus.Equals(blockEndDelimiter))
+				if(focus.Equals(blockStartDelimiter))
+					blockLevels++;
+
+				if (blockStart == notFound && focus.Equals(blockStartDelimiter))				
+					blockStart = i;				
+				else if (focus.Equals(blockEndDelimiter))
+				{
 					blockEnd = i;
+					blockLevels--;
+					if (blockLevels == 0)
+						break;
+				}
 			}
 			if (blockStart == blockEnd)
 				return string.Empty;

@@ -1,6 +1,4 @@
-﻿using Anenome.Contracts;
-
-namespace Anenome.Business
+﻿namespace Anenome.Business
 {
 	public interface IAnenomeMapper
 	{

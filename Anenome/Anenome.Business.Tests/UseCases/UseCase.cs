@@ -14,6 +14,29 @@ namespace Anenome.Business.Tests.UseCases
 
 			return returnMe;
 		}
+		internal static Block NestWith(this Block block, string name)
+		{
+			var nestMe = new Block();
+			block.Properties.Add(name, nestMe);
+			return nestMe;
+		}
+		internal static Block With(this Block block, string name)
+		{
+			block.Properties.Add(name, Block.Blank);
+			return block;
+		}
+		internal static Block LastNodeNestedBlock()
+		{
+			var returnMe = new Block();
+
+			returnMe
+				.NestWith("a")
+					.NestWith("b")
+						.NestWith("c")
+							.With("d");
+
+			return returnMe;
+		}
 
 		internal static Block DefaultRootBlock()
 		{

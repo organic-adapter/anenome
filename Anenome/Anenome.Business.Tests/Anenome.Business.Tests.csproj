@@ -26,6 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="UseCases\single-property-blocks.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UseCases\edge-case-last-node-nested.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="UseCases\paren-source.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

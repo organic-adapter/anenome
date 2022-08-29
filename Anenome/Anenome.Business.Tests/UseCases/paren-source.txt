@@ -1,5 +1,1 @@
-﻿Please send me access to the source and a runnable copy of your app.  
-
-Using any technology of your choice, convert the following string: 
-
-(id, name, email, type(id, name, customFields(c1, c2, c3)), externalId)
+﻿(id, name, email, type(id, name, customFields(c1, c2, c3)), externalId)

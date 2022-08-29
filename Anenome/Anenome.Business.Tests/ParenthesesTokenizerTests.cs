@@ -21,5 +21,14 @@ namespace Anenome.Business.Tests
 			var blocks = tokenizer.Tokenize(source);
 			Assert.Equal(expected, blocks);
 		}
+		[Fact]
+		public void Can_Tokenize_Single_Property_Blocks()
+		{
+			var source = UseCase.LoadFromFile("edge-case-last-node-nested");
+			var expected = UseCase.LastNodeNestedBlock();
+
+			var blocks = tokenizer.Tokenize(source);
+			Assert.Equal(expected, blocks);
+		}
 	}
 }

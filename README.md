@@ -1,6 +1,13 @@
 # anenome
 Set the Anenome.CLI as the Startup Project and run
 
+# Releases
+2022-08-29
+Fixed various edge cases. It was not accounting for blocks containing a single property 
+```(a(b))``` 
+or multiple properties that contained blocks on the same level.
+```(z(y),a(b),c(d))```
+
 # Assumptions
 ## Sorting
 Based on the potential outputs two arbitrary property sorts were detected.
