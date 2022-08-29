@@ -30,5 +30,14 @@ namespace Anenome.Business.Tests
 			var blocks = tokenizer.Tokenize(source);
 			Assert.Equal(expected, blocks);
 		}
+		[Fact]
+		public void Can_Tokenize_Multiple_Properties_With_Blocks()
+		{
+			var source = UseCase.LoadFromFile("single-property-blocks");
+			var expected = UseCase.SinglePropertyBlocks();
+
+			var blocks = tokenizer.Tokenize(source);
+			Assert.Equal(expected, blocks);
+		}
 	}
 }

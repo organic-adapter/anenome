@@ -37,6 +37,22 @@ namespace Anenome.Business.Tests.UseCases
 
 			return returnMe;
 		}
+		internal static Block SinglePropertyBlocks()
+		{
+			var returnMe = new Block();
+
+			returnMe
+				.NestWith("z")
+					.With("y");
+			returnMe
+				.NestWith("a")
+					.With("b");
+			returnMe
+				.NestWith("c")
+					.With("d");
+
+			return returnMe;
+		}
 
 		internal static Block DefaultRootBlock()
 		{
